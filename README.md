@@ -33,3 +33,4 @@ The following `options` must be specified:
 - `jwtSecret` – The secret key used to sign the JWT.
 - `findToken` – A function that searches your token storage mechanism to determine whether the JWT is a "duplicate", returning `true` if so; otherwise, `false`. The JWT's identifier is supplied to the function as its only argument, and the return value can be resolved via a Promise if necessary.
 - `storeToken` – A function that persists the JWT to your token storage mechanism. The JWT's identifier is supplied to the function as its only argument.
+- `aafEnv` – A variable taking AAF Environment as `TEST` or `PRODUCTION`.
