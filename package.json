@@ -1,10 +1,10 @@
 {
   "name": "aaf-rapid-connect-jwt-validator",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Validate JWT claims according to AAF's recommendations.",
   "author": "DSTIL",
   "license": "MIT",
-  "repository": "dstil/aaf-rapid-connect-jwt-validator",
+  "repository": "deakin-launchpad/aaf-rapid-connect-jwt-validator",
   "main": "dist",
   "scripts": {
     "build": "node_modules/.bin/babel lib -d dist -q",
