@@ -5,6 +5,7 @@ import validateJWT, { ValidationError } from "../lib";
 const noop = () => {};
 const jwtSecret = "secret";
 const appUrl = "https://example.com";
+let aafEnv = "PRODUCTION";
 const createValidJWT = () => ({
   iss: "https://rapid.aaf.edu.au",
   aud: appUrl,
@@ -26,7 +27,8 @@ describe("aaf-rapid-connect-jwt-validator", () => {
       appUrl,
       jwtSecret,
       findToken: noop,
-      storeToken: noop
+      storeToken: noop,
+      aafEnv
     });
 
     promise.should.be.a.Promise();
@@ -46,7 +48,8 @@ describe("aaf-rapid-connect-jwt-validator", () => {
       appUrl,
       jwtSecret,
       findToken: noop,
-      storeToken: noop
+      storeToken: noop,
+      aafEnv
     }).then(() => {
       throw new Error("Invalid JWT successfully passed validation. :(");
     }).catch(error => {
@@ -66,7 +69,8 @@ describe("aaf-rapid-connect-jwt-validator", () => {
       appUrl,
       jwtSecret,
       findToken: noop,
-      storeToken: noop
+      storeToken: noop,
+      aafEnv
     }).then(() => {
       throw new Error("Invalid JWT successfully passed validation. :(");
     }).catch(error => {
@@ -86,7 +90,8 @@ describe("aaf-rapid-connect-jwt-validator", () => {
       appUrl,
       jwtSecret,
       findToken: () => true,
-      storeToken: noop
+      storeToken: noop,
+      aafEnv
     }).then(() => {
       throw new Error("Invalid JWT successfully passed validation. :(");
     }).catch(error => {

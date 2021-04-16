@@ -12,7 +12,6 @@
     "precommit": "npm test",
     "prepush": "npm test",
     "prepublish": "npm test && npm run build",
-    "pretest": "node_modules/.bin/eslint -c dstil lib",
     "test": "node_modules/.bin/mocha --compilers js:babel-register"
   },
   "dependencies": {
